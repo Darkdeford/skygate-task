@@ -6,11 +6,11 @@ class FormController {
 
     submitForm($event) {
         $event.preventDefault();
-        console.log('this', this);
-
+        this.sendForm.$setSubmitted();
         if (this.sendForm.$valid) {
-            console.log('form', this);
+            console.log('form', this.form);
             //todo send form to backend
+            //$http.post('someEndpoint).then... it should be in some service
             this.sendForm.$setPristine();
             this.sendForm.$setUntouched();
         }
