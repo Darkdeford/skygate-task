@@ -1,0 +1,11 @@
+<div class="input-group"
+     moment-picker="$ctrl.datepicker"
+     format="YYYY-MM-DD">
+    <span class="input-group-addon">
+        <i class="octicon octicon-calendar"></i>
+    </span>
+    <input class="form-control"
+           placeholder="Select a date"
+           ng-model="ctrl.datepicker"
+           ng-model-options="{ updateOn: 'blur' }">
+</div>
