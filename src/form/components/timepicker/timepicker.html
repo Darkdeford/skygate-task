@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="input-group"
+     moment-picker="$ctrl.form.timepicker"
+     show-header="false"
+     format="HH:mm">
+    <span class="input-group-addon">
+        <i class="glyphicon glyphicon-time"></i>
+    </span>
+    <input class="form-control"
+           name="timepicker"
+           placeholder="Select a time"
+           ng-model="$ctrl.form.timepicker"
+           ng-model-options="{ updateOn: 'blur' }" required>
+</div>

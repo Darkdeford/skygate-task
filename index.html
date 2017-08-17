@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="node_modules/angular-moment-picker/dist/angular-moment-picker.min.css"/>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <skygate-form></skygate-form>
-    <script src="../node_modules/angular/angular.min.js"></script>
+    <div ng-app="skygate">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <skygate-form></skygate-form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="node_modules/angular/angular.min.js"></script>
     <script src="app.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/moment/moment.js"></script>
+    <script src="node_modules/angular-moment-picker/dist/angular-moment-picker.min.js"></script>
 </body>
 </html>

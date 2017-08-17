@@ -1,11 +1,13 @@
 <div class="input-group"
-     moment-picker="$ctrl.datepicker"
+     moment-picker="$ctrl.form.datepicker"
+     min-date="$ctrl.minDate"
      format="YYYY-MM-DD">
     <span class="input-group-addon">
-        <i class="octicon octicon-calendar"></i>
+        <i class="glyphicon glyphicon-calendar"></i>
     </span>
     <input class="form-control"
+           name="datepicker"
            placeholder="Select a date"
-           ng-model="ctrl.datepicker"
-           ng-model-options="{ updateOn: 'blur' }">
+           ng-model="$ctrl.form.datepicker"
+           ng-model-options="{ updateOn: 'blur' }" required>
 </div>

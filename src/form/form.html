@@ -1,10 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<h1>Skygate Form</h1>
+<div ng-form="$ctrl.sendForm" novalidate>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="recipient">Recipient Name</label>
+                <input type="text" name="recipient" ng-model="$ctrl.form.recipient" class="form-control" id="recipient" placeholder="Enter Recipient Name" ng-maxlength="200" required>
+                <p class="validation-error" ng-show="$ctrl.sendForm.recipient.$touched && $ctrl.sendForm.recipient.$error.required">
+                    This field is required.
+                </p>
+                <p class="validation-error" ng-show="$ctrl.sendForm.recipient.$touched && $ctrl.sendForm.recipient.$error.maxlength">
+                    Your text is too long.
+                </p>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" name="email" ng-model="$ctrl.form.email" class="form-control" id="email" placeholder="Enter email" required>
+                <p class="validation-error" ng-show="$ctrl.sendForm.email.$touched && $ctrl.sendForm.email.$error.required">
+                    This field is required.
+                </p>
+                <p class="validation-error" ng-show="$ctrl.sendForm.email.$touched && $ctrl.sendForm.email.$error.email">
+                    Wrong format.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" name="title" ng-model="$ctrl.form.title" class="form-control" id="title" placeholder="Enter email title" maxlength="200" required>
+                <p class="validation-error" ng-show="$ctrl.sendForm.title.$touched && $ctrl.sendForm.title.$error.required">
+                    This field is required.
+                </p>
+                <p class="validation-error" ng-show="$ctrl.sendForm.title.$touched && $ctrl.sendForm.title.$error.maxlength">
+                    Your text is too long.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="content">Email Content</label>
+                <textarea name="content" ng-model="$ctrl.form.content" class="form-control" id="content" maxlength="2000" required></textarea>
+                <p class="validation-error" ng-show="$ctrl.sendForm.content.$touched && $ctrl.sendForm.content.$error.required">
+                    This field is required.
+                </p>
+                <p class="validation-error" ng-show="$ctrl.sendForm.content.$touched && $ctrl.sendForm.content.$error.maxlength">
+                    Your text is too long.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label>Date</label>
+            <datepicker form="$ctrl.form"></datepicker>
+            <p class="validation-error" ng-show="$ctrl.sendForm.datepicker.$touched && $ctrl.sendForm.datepicker.$error.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <label>Time</label>
+            <timepicker form="$ctrl.form"></timepicker>
+            <p class="validation-error" ng-show="$ctrl.sendForm.timepicker.$touched && $ctrl.sendForm.timepicker.$error.required">
+                This field is required.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button ng-click="$ctrl.submitForm($event)"class="btn btn-success btn-submit">Submit</button>
+        </div>
+    </div>
+</div>
+
